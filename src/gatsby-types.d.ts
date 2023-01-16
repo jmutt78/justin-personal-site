@@ -380,13 +380,9 @@ type File = Node & {
   readonly changeTime: Scalars['Date'];
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
-  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
-  readonly childMarkdownRemark: Maybe<MarkdownRemark>;
   readonly children: ReadonlyArray<Node>;
   /** Returns all children nodes filtered by type ImageSharp */
   readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
-  /** Returns all children nodes filtered by type MarkdownRemark */
-  readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
   readonly ctime: Scalars['Date'];
   readonly ctimeMs: Scalars['Float'];
   readonly dev: Scalars['Int'];
@@ -530,10 +526,8 @@ type FileFieldSelector = {
   readonly blocks: InputMaybe<FieldSelectorEnum>;
   readonly changeTime: InputMaybe<FieldSelectorEnum>;
   readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFieldSelector>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
   readonly ctime: InputMaybe<FieldSelectorEnum>;
   readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
   readonly dev: InputMaybe<FieldSelectorEnum>;
@@ -575,10 +569,8 @@ type FileFilterInput = {
   readonly blocks: InputMaybe<IntQueryOperatorInput>;
   readonly changeTime: InputMaybe<DateQueryOperatorInput>;
   readonly childImageSharp: InputMaybe<ImageSharpFilterInput>;
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
   readonly ctime: InputMaybe<DateQueryOperatorInput>;
   readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   readonly dev: InputMaybe<IntQueryOperatorInput>;
@@ -661,10 +653,8 @@ type FileSortInput = {
   readonly blocks: InputMaybe<SortOrderEnum>;
   readonly changeTime: InputMaybe<SortOrderEnum>;
   readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
-  readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpSortInput>;
-  readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
   readonly ctime: InputMaybe<SortOrderEnum>;
   readonly ctimeMs: InputMaybe<SortOrderEnum>;
   readonly dev: InputMaybe<SortOrderEnum>;
@@ -1402,10 +1392,6 @@ type MarkdownRemarkFilterInput = {
   readonly wordCount: InputMaybe<MarkdownWordCountFilterInput>;
 };
 
-type MarkdownRemarkFilterListInput = {
-  readonly elemMatch: InputMaybe<MarkdownRemarkFilterInput>;
-};
-
 type MarkdownRemarkGroupConnection = {
   readonly distinct: ReadonlyArray<Scalars['String']>;
   readonly edges: ReadonlyArray<MarkdownRemarkEdge>;
@@ -1842,10 +1828,8 @@ type Query_fileArgs = {
   blocks: InputMaybe<IntQueryOperatorInput>;
   changeTime: InputMaybe<DateQueryOperatorInput>;
   childImageSharp: InputMaybe<ImageSharpFilterInput>;
-  childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
-  childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
   ctime: InputMaybe<DateQueryOperatorInput>;
   ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   dev: InputMaybe<IntQueryOperatorInput>;
@@ -2714,24 +2698,28 @@ type SitePluginSortInput = {
 
 type SiteSiteMetadata = {
   readonly description: Maybe<Scalars['String']>;
+  readonly image: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly image: InputMaybe<FieldSelectorEnum>;
   readonly siteUrl: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly image: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSiteMetadataSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly image: InputMaybe<SortOrderEnum>;
   readonly siteUrl: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
 };

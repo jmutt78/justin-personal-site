@@ -4,6 +4,8 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Justin's Personal Site`,
     siteUrl: `https://justinmcintosh.io`,
+    description: `Justin McIntosh's personal site`,
+    image: '/images/logo.svg',
   },
 
   graphqlTypegen: true,
