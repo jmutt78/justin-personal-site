@@ -1,3 +1,5 @@
+import mixins from './mixins';
+
 const theme = {
   bp: {
     mobileS: `max-width: 330px`,
@@ -10,6 +12,7 @@ const theme = {
     desktopM: `max-width: 1200px`,
     desktopL: `max-width: 1400px`,
   },
+  mixins,
 };
 
 export default theme;

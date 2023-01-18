@@ -3,6 +3,7 @@ import Head from './head';
 import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import { theme } from '../styles';
+import Nav from './nav';
 
 const StyledContent = styled.div`
   display: flex;
@@ -52,7 +53,6 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   return (
     <>
       <Head />
-
       <div id='root'>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
@@ -60,6 +60,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
             Skip to Content
           </a>
           <StyledContent>
+            <Nav isHome={isHome} />
             <div id='content'>{children}</div>
           </StyledContent>
         </ThemeProvider>
