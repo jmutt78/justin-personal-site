@@ -7,7 +7,9 @@ const config: GatsbyConfig = {
     description: `Justin McIntosh's personal site`,
     image: '/images/logo.svg',
   },
-
+  flags: {
+    DEV_SSR: true,
+  },
   graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-styled-components',
