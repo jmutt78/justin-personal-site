@@ -59,14 +59,14 @@ const config: GatsbyConfig = {
     //     path: `${__dirname}/content/projects`,
     //   },
     // },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: './src/pages/',
-      },
-      __key: 'pages',
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'pages',
+    //     path: './src/pages/',
+    //   },
+    //   __key: 'pages',
+    // },
     // {
     //   resolve: `gatsby-transformer-remark`,
     //   options: {
