@@ -105,7 +105,7 @@ const StyledSidebar = styled.aside<StyledSidebarProps>`
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: var(--green);
+    background-color: transparent;
     transform: translateX(100%);
     transition-property: transform;
     transition-duration: var(--transition-duration);

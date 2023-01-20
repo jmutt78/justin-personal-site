@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { usePrefersReducedMotion } from '../hooks';
-import { navDelay, loaderDelay } from '../utils';
+import { usePrefersReducedMotion } from '../../hooks';
+import { navDelay, loaderDelay } from '../../utils';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -67,8 +67,10 @@ const Intro = () => {
       <p>
         I'm a software engineering leader with a passion for building exceptional digital
         experiences. As a hands-on leader, I specialize in leading and organizing teams while
-        remaining active in the engineering process. Currently, I am focused on building the first
-        global biosecurity platform at{' '}
+        remaining active in the engineering process.
+      </p>
+      <p>
+        Currently, I am focused on building the first global biosecurity platform at{' '}
         <a href='https://www.thepublichealthco.com/' target='_blank' rel='noreferrer'>
           The Public Health Company
         </a>
