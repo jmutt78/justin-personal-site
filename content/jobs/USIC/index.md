@@ -1,7 +1,7 @@
 ---
 date: '2013-04-8'
-title: 'General Manager of Diversified Service'
-company: 'United States Infrastructure Corporation'
+title: 'General Manager'
+company: 'USIC'
 location: 'Indianapolis, IN'
 range: 'December 2013 - February 2015'
 url: 'https://www.usicllc.com/'

@@ -268,6 +268,7 @@ const StyledProject = styled.li`
         .img {
           background: transparent;
           filter: none;
+          z-index: 4;
         }
       }
 
@@ -282,16 +283,14 @@ const StyledProject = styled.li`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
+        /* background-color: var(--navy); */
         mix-blend-mode: screen;
       }
     }
 
     .img {
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
-
+      /* transition: var(--transition); */
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;

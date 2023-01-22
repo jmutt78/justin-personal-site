@@ -6,6 +6,7 @@ import About from '../components/sections/about';
 import Jobs from '../components/sections/jobs';
 import styled from 'styled-components';
 import Featured from '../components/sections/featured';
+import Projects from '../components/sections/projects';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -19,6 +20,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
         <About />
         <Jobs />
         <Featured />
+        <Projects />
       </StyledMainContainer>
     </Layout>
   );
