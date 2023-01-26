@@ -4,6 +4,9 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import { theme } from '../styles';
 import Nav from './nav';
+import Footer from './footer';
+import Social from './social';
+import Email from './email';
 
 const StyledContent = styled.div`
   display: flex;
@@ -61,7 +64,10 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
           </a>
           <StyledContent>
             <Nav isHome={isHome} />
+            <Social isHome={isHome} />
+            <Email isHome={isHome} />
             <div id='content'>{children}</div>
+            <Footer />
           </StyledContent>
         </ThemeProvider>
       </div>

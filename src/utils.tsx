@@ -79,3 +79,14 @@ const isSSR = typeof window === 'undefined';
 const sr = isSSR ? null : ScrollReveal();
 
 export default sr;
+
+export const socialMedia = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/jmutt78',
+  },
+  {
+    name: 'Linkedin',
+    url: 'https://www.linkedin.com/in/justin-mcintosh-45897833/',
+  },
+];
