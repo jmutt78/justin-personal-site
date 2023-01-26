@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { socialMedia } from '../utils';
 import Icon from './icon';
@@ -110,10 +109,6 @@ const Footer = () => {
       </StyledCredit>
     </StyledFooter>
   );
-};
-
-Footer.propTypes = {
-  githubInfo: PropTypes.object,
 };
 
 export default Footer;

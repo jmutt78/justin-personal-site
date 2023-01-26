@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import {
   IconAppStore,
   IconBookmark,
@@ -50,10 +50,6 @@ const Icon = ({ name }: { name: string }) => {
     default:
       return <IconExternal />;
   }
-};
-
-Icon.propTypes = {
-  name: PropTypes.string.isRequired,
 };
 
 export default Icon;
