@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef, RefObject, SetStateAction } from 'r
 import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
-import { usePrefersReducedMotion } from '../../hooks';
+
 import sr, { srConfig, KEY_CODES } from '../../utils';
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;

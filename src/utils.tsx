@@ -1,5 +1,7 @@
 import ScrollReveal from 'scrollreveal';
 
+export const email = 'justinmcintosh7897@gmail.com';
+
 export const navLinks = [
   {
     name: 'About',

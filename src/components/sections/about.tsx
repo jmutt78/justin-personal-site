@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { usePrefersReducedMotion } from '../../hooks';
 import sr, { srConfig } from '../../utils';
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 const StyledAboutSection = styled.section`
   max-width: 900px;

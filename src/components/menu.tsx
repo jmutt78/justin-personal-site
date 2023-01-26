@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { useOnClickOutside } from '../hooks';
+
 import { KEY_CODES, navLinks } from '../utils';
+import useOnClickOutside from '../hooks/useOnClickOutside';
 
 interface StyledHamburgerButtonProps {
   menuOpen: boolean;

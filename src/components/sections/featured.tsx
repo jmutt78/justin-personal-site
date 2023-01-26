@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { usePrefersReducedMotion } from '../../hooks';
+
 import sr, { srConfig } from '../../utils';
 import Icon from '../icon';
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};

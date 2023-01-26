@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
-import { useScrollDirection, usePrefersReducedMotion } from '../hooks';
+
 import { loaderDelay, navLinks } from '../utils';
 import IconLogo from './icons/logo';
 import Menu from './menu';
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
+import useScrollDirection from '../hooks/useScrollDirection';
 
 interface StyledHeaderProps {
   scrollDirection: 'up' | 'down';
