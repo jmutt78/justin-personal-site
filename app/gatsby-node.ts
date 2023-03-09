@@ -1,70 +1,34 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require('path');
-// const _ = require('lodash');
 
-// exports.createPages = async ({ actions, graphql, reporter }) => {
-//   const { createPage } = actions;
-//   const postTemplate = path.resolve(`src/templates/post.js`);
-//   const tagTemplate = path.resolve('src/templates/tag.js');
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  console.log('Creating pages...');
 
-//   const result = await graphql(`
-//     {
-//       postsRemark: allMarkdownRemark(
-//         filter: { fileAbsolutePath: { regex: "/content/posts/" } }
-//         sort: { order: DESC, fields: [frontmatter___date] }
-//         limit: 1000
-//       ) {
-//         edges {
-//           node {
-//             frontmatter {
-//               slug
-//             }
-//           }
-//         }
-//       }
-//       tagsGroup: allMarkdownRemark(limit: 2000) {
-//         group(field: frontmatter___tags) {
-//           fieldValue
-//         }
-//       }
-//     }
-//   `);
+  const result = await graphql(`
+    query {
+      allSanityPost {
+        edges {
+          node {
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
 
-//   // Handle errors
-//   if (result.errors) {
-//     reporter.panicOnBuild(`Error while running GraphQL query.`);
-//     return;
-//   }
-
-//   // Create post detail pages
-//   const posts = result.data.postsRemark.edges;
-
-//   posts.forEach(({ node }) => {
-//     createPage({
-//       path: node.frontmatter.slug,
-//       component: postTemplate,
-//       context: {},
-//     });
-//   });
-
-//   // Extract tag data from query
-//   const tags = result.data.tagsGroup.group;
-//   // Make tag pages
-//   tags.forEach((tag) => {
-//     createPage({
-//       path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
-//       component: tagTemplate,
-//       context: {
-//         tag: tag.fieldValue,
-//       },
-//     });
-//   });
-// };
+  result.data.allSanityPost.edges.forEach(({ node }) => {
+    const { current } = node.slug;
+    createPage({
+      path: `/${current}`,
+      component: path.resolve('./src/components/sections/post.tsx'),
+      context: {
+        slug: current,
+      },
+    });
+  });
+};
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {

@@ -1760,6 +1760,10 @@ type Query = {
   readonly allImageSharp: ImageSharpConnection;
   readonly allMarkdownRemark: MarkdownRemarkConnection;
   readonly allMdx: MdxConnection;
+  readonly allSanityCategory: SanityCategoryConnection;
+  readonly allSanityFileAsset: SanityFileAssetConnection;
+  readonly allSanityImageAsset: SanityImageAssetConnection;
+  readonly allSanityPost: SanityPostConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly allSiteFunction: SiteFunctionConnection;
@@ -1770,6 +1774,10 @@ type Query = {
   readonly imageSharp: Maybe<ImageSharp>;
   readonly markdownRemark: Maybe<MarkdownRemark>;
   readonly mdx: Maybe<Mdx>;
+  readonly sanityCategory: Maybe<SanityCategory>;
+  readonly sanityFileAsset: Maybe<SanityFileAsset>;
+  readonly sanityImageAsset: Maybe<SanityImageAsset>;
+  readonly sanityPost: Maybe<SanityPost>;
   readonly site: Maybe<Site>;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
   readonly siteFunction: Maybe<SiteFunction>;
@@ -1815,6 +1823,38 @@ type Query_allMdxArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<MdxSortInput>>>;
+};
+
+
+type Query_allSanityCategoryArgs = {
+  filter: InputMaybe<SanityCategoryFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SanityCategorySortInput>>>;
+};
+
+
+type Query_allSanityFileAssetArgs = {
+  filter: InputMaybe<SanityFileAssetFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SanityFileAssetSortInput>>>;
+};
+
+
+type Query_allSanityImageAssetArgs = {
+  filter: InputMaybe<SanityImageAssetFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SanityImageAssetSortInput>>>;
+};
+
+
+type Query_allSanityPostArgs = {
+  filter: InputMaybe<SanityPostFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<SanityPostSortInput>>>;
 };
 
 
@@ -1985,6 +2025,115 @@ type Query_mdxArgs = {
 };
 
 
+type Query_sanityCategoryArgs = {
+  _createdAt: InputMaybe<DateQueryOperatorInput>;
+  _id: InputMaybe<StringQueryOperatorInput>;
+  _key: InputMaybe<StringQueryOperatorInput>;
+  _rev: InputMaybe<StringQueryOperatorInput>;
+  _type: InputMaybe<StringQueryOperatorInput>;
+  _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  description: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_sanityFileAssetArgs = {
+  _createdAt: InputMaybe<DateQueryOperatorInput>;
+  _id: InputMaybe<StringQueryOperatorInput>;
+  _key: InputMaybe<StringQueryOperatorInput>;
+  _rawSource: InputMaybe<JSONQueryOperatorInput>;
+  _rev: InputMaybe<StringQueryOperatorInput>;
+  _type: InputMaybe<StringQueryOperatorInput>;
+  _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  altText: InputMaybe<StringQueryOperatorInput>;
+  assetId: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  description: InputMaybe<StringQueryOperatorInput>;
+  extension: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  label: InputMaybe<StringQueryOperatorInput>;
+  mimeType: InputMaybe<StringQueryOperatorInput>;
+  originalFilename: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  path: InputMaybe<StringQueryOperatorInput>;
+  sha1hash: InputMaybe<StringQueryOperatorInput>;
+  size: InputMaybe<FloatQueryOperatorInput>;
+  source: InputMaybe<SanityAssetSourceDataFilterInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+  url: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_sanityImageAssetArgs = {
+  _createdAt: InputMaybe<DateQueryOperatorInput>;
+  _id: InputMaybe<StringQueryOperatorInput>;
+  _key: InputMaybe<StringQueryOperatorInput>;
+  _rawMetadata: InputMaybe<JSONQueryOperatorInput>;
+  _rawSource: InputMaybe<JSONQueryOperatorInput>;
+  _rev: InputMaybe<StringQueryOperatorInput>;
+  _type: InputMaybe<StringQueryOperatorInput>;
+  _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  altText: InputMaybe<StringQueryOperatorInput>;
+  assetId: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  description: InputMaybe<StringQueryOperatorInput>;
+  extension: InputMaybe<StringQueryOperatorInput>;
+  filename: InputMaybe<StringQueryOperatorInput>;
+  filesize: InputMaybe<IntQueryOperatorInput>;
+  gatsbyImage: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  gatsbyImageData: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  height: InputMaybe<IntQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  label: InputMaybe<StringQueryOperatorInput>;
+  metadata: InputMaybe<SanityImageMetadataFilterInput>;
+  mimeType: InputMaybe<StringQueryOperatorInput>;
+  originalFilename: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  path: InputMaybe<StringQueryOperatorInput>;
+  publicUrl: InputMaybe<StringQueryOperatorInput>;
+  resize: InputMaybe<RemoteFileResizeFilterInput>;
+  sha1hash: InputMaybe<StringQueryOperatorInput>;
+  size: InputMaybe<FloatQueryOperatorInput>;
+  source: InputMaybe<SanityAssetSourceDataFilterInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+  uploadId: InputMaybe<StringQueryOperatorInput>;
+  url: InputMaybe<StringQueryOperatorInput>;
+  width: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_sanityPostArgs = {
+  _createdAt: InputMaybe<DateQueryOperatorInput>;
+  _id: InputMaybe<StringQueryOperatorInput>;
+  _key: InputMaybe<StringQueryOperatorInput>;
+  _rawBody: InputMaybe<JSONQueryOperatorInput>;
+  _rawCategories: InputMaybe<JSONQueryOperatorInput>;
+  _rawExcerpt: InputMaybe<JSONQueryOperatorInput>;
+  _rawMainImage: InputMaybe<JSONQueryOperatorInput>;
+  _rawSlug: InputMaybe<JSONQueryOperatorInput>;
+  _rev: InputMaybe<StringQueryOperatorInput>;
+  _type: InputMaybe<StringQueryOperatorInput>;
+  _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  body: InputMaybe<SanityBlockFilterListInput>;
+  categories: InputMaybe<SanityCategoryFilterListInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  excerpt: InputMaybe<SanityBlockFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  mainImage: InputMaybe<SanityImageFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  publishedAt: InputMaybe<DateQueryOperatorInput>;
+  slug: InputMaybe<SanitySlugFilterInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
 type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -2055,6 +2204,1637 @@ type Query_sitePluginArgs = {
   resolve: InputMaybe<StringQueryOperatorInput>;
   ssrAPIs: InputMaybe<StringQueryOperatorInput>;
   version: InputMaybe<StringQueryOperatorInput>;
+};
+
+/** Remote Interface */
+type RemoteFile = {
+  readonly filename: Scalars['String'];
+  readonly filesize: Maybe<Scalars['Int']>;
+  /** Data used in the <GatsbyImage /> component. See https://gatsby.dev/img for more info. */
+  readonly gatsbyImage: Maybe<Scalars['GatsbyImageData']>;
+  readonly height: Maybe<Scalars['Int']>;
+  readonly id: Scalars['ID'];
+  readonly mimeType: Scalars['String'];
+  readonly publicUrl: Scalars['String'];
+  readonly resize: Maybe<RemoteFileResize>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+
+/** Remote Interface */
+type RemoteFile_gatsbyImageArgs = {
+  aspectRatio: InputMaybe<Scalars['Float']>;
+  backgroundColor: InputMaybe<Scalars['String']>;
+  breakpoints?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']>>>;
+  cropFocus: InputMaybe<ReadonlyArray<InputMaybe<RemoteFileCropFocus>>>;
+  fit?: InputMaybe<RemoteFileFit>;
+  formats?: InputMaybe<ReadonlyArray<RemoteFileFormat>>;
+  height: InputMaybe<Scalars['Int']>;
+  layout?: InputMaybe<RemoteFileLayout>;
+  outputPixelDensities?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Float']>>>;
+  placeholder?: InputMaybe<RemoteFilePlaceholder>;
+  quality?: InputMaybe<Scalars['Int']>;
+  sizes: InputMaybe<Scalars['String']>;
+  width: InputMaybe<Scalars['Int']>;
+};
+
+
+/** Remote Interface */
+type RemoteFile_resizeArgs = {
+  aspectRatio: InputMaybe<Scalars['Float']>;
+  cropFocus: InputMaybe<ReadonlyArray<InputMaybe<RemoteFileCropFocus>>>;
+  fit?: InputMaybe<RemoteFileFit>;
+  format?: InputMaybe<RemoteFileFormat>;
+  height: InputMaybe<Scalars['Int']>;
+  quality?: InputMaybe<Scalars['Int']>;
+  width: InputMaybe<Scalars['Int']>;
+};
+
+type RemoteFileCropFocus =
+  | 'bottom'
+  | 'center'
+  | 'edges'
+  | 'entropy'
+  | 'faces'
+  | 'left'
+  | 'right'
+  | 'top';
+
+type RemoteFileFit =
+  | 'contain'
+  | 'cover'
+  | 'fill'
+  | 'outside';
+
+type RemoteFileFormat =
+  | 'auto'
+  | 'avif'
+  | 'jpg'
+  | 'png'
+  | 'webp';
+
+type RemoteFileLayout =
+  | 'constrained'
+  | 'fixed'
+  | 'fullWidth';
+
+type RemoteFilePlaceholder =
+  | 'blurred'
+  | 'dominantColor'
+  | 'none'
+  | 'tracedSVG';
+
+type RemoteFileResize = {
+  readonly height: Maybe<Scalars['Int']>;
+  readonly src: Maybe<Scalars['String']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+type RemoteFileResizeFieldSelector = {
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly src: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
+type RemoteFileResizeFilterInput = {
+  readonly height: InputMaybe<IntQueryOperatorInput>;
+  readonly src: InputMaybe<StringQueryOperatorInput>;
+  readonly width: InputMaybe<IntQueryOperatorInput>;
+};
+
+type RemoteFileResizeSortInput = {
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly src: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
+};
+
+type SanityAssetSourceData = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly id: Maybe<Scalars['String']>;
+  readonly name: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+};
+
+type SanityAssetSourceDataFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly url: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityAssetSourceDataFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanityAssetSourceDataSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly url: InputMaybe<SortOrderEnum>;
+};
+
+type SanityBlock = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawChildren: Maybe<Scalars['JSON']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly children: Maybe<ReadonlyArray<Maybe<SanitySpan>>>;
+  readonly list: Maybe<Scalars['String']>;
+  readonly style: Maybe<Scalars['String']>;
+};
+
+
+type SanityBlock__rawChildrenArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+type SanityBlockFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawChildren: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<SanitySpanFieldSelector>;
+  readonly list: InputMaybe<FieldSelectorEnum>;
+  readonly style: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityBlockFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawChildren: InputMaybe<JSONQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<SanitySpanFilterListInput>;
+  readonly list: InputMaybe<StringQueryOperatorInput>;
+  readonly style: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanityBlockFilterListInput = {
+  readonly elemMatch: InputMaybe<SanityBlockFilterInput>;
+};
+
+type SanityBlockOrImage = SanityBlock | SanityImage;
+
+type SanityBlockSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawChildren: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<SanitySpanSortInput>;
+  readonly list: InputMaybe<SortOrderEnum>;
+  readonly style: InputMaybe<SortOrderEnum>;
+};
+
+type SanityCategory = Node & SanityDocument & {
+  readonly _createdAt: Maybe<Scalars['Date']>;
+  readonly _id: Maybe<Scalars['String']>;
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rev: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _updatedAt: Maybe<Scalars['Date']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+
+type SanityCategory__createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type SanityCategory__updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type SanityCategoryConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityCategoryEdge>;
+  readonly group: ReadonlyArray<SanityCategoryGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityCategory>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityCategoryConnection_distinctArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+
+type SanityCategoryConnection_groupArgs = {
+  field: SanityCategoryFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityCategoryConnection_maxArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+
+type SanityCategoryConnection_minArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+
+type SanityCategoryConnection_sumArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+type SanityCategoryEdge = {
+  readonly next: Maybe<SanityCategory>;
+  readonly node: SanityCategory;
+  readonly previous: Maybe<SanityCategory>;
+};
+
+type SanityCategoryFieldSelector = {
+  readonly _createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly _id: InputMaybe<FieldSelectorEnum>;
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rev: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly _updatedAt: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityCategoryFilterInput = {
+  readonly _createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly _id: InputMaybe<StringQueryOperatorInput>;
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rev: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanityCategoryFilterListInput = {
+  readonly elemMatch: InputMaybe<SanityCategoryFilterInput>;
+};
+
+type SanityCategoryGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityCategoryEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SanityCategoryGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityCategory>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityCategoryGroupConnection_distinctArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+
+type SanityCategoryGroupConnection_groupArgs = {
+  field: SanityCategoryFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityCategoryGroupConnection_maxArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+
+type SanityCategoryGroupConnection_minArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+
+type SanityCategoryGroupConnection_sumArgs = {
+  field: SanityCategoryFieldSelector;
+};
+
+type SanityCategorySortInput = {
+  readonly _createdAt: InputMaybe<SortOrderEnum>;
+  readonly _id: InputMaybe<SortOrderEnum>;
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rev: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly _updatedAt: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type SanityCrossDatasetReference = {
+  readonly _dataset: Maybe<Scalars['String']>;
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _projectId: Maybe<Scalars['String']>;
+  readonly _ref: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _weak: Maybe<Scalars['Boolean']>;
+};
+
+/** A Sanity document */
+type SanityDocument = {
+  readonly _createdAt: Maybe<Scalars['Date']>;
+  readonly _id: Maybe<Scalars['String']>;
+  readonly _rev: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _updatedAt: Maybe<Scalars['Date']>;
+};
+
+type SanityFile = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawAsset: Maybe<Scalars['JSON']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly asset: Maybe<SanityFileAsset>;
+};
+
+
+type SanityFile__rawAssetArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+type SanityFileAsset = Node & SanityDocument & {
+  readonly _createdAt: Maybe<Scalars['Date']>;
+  readonly _id: Maybe<Scalars['String']>;
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawSource: Maybe<Scalars['JSON']>;
+  readonly _rev: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _updatedAt: Maybe<Scalars['Date']>;
+  readonly altText: Maybe<Scalars['String']>;
+  readonly assetId: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly extension: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly label: Maybe<Scalars['String']>;
+  readonly mimeType: Maybe<Scalars['String']>;
+  readonly originalFilename: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly path: Maybe<Scalars['String']>;
+  readonly sha1hash: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Float']>;
+  readonly source: Maybe<SanityAssetSourceData>;
+  readonly title: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+};
+
+
+type SanityFileAsset__createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type SanityFileAsset__rawSourceArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityFileAsset__updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type SanityFileAssetConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityFileAssetEdge>;
+  readonly group: ReadonlyArray<SanityFileAssetGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityFileAsset>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityFileAssetConnection_distinctArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+
+type SanityFileAssetConnection_groupArgs = {
+  field: SanityFileAssetFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityFileAssetConnection_maxArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+
+type SanityFileAssetConnection_minArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+
+type SanityFileAssetConnection_sumArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+type SanityFileAssetEdge = {
+  readonly next: Maybe<SanityFileAsset>;
+  readonly node: SanityFileAsset;
+  readonly previous: Maybe<SanityFileAsset>;
+};
+
+type SanityFileAssetFieldSelector = {
+  readonly _createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly _id: InputMaybe<FieldSelectorEnum>;
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawSource: InputMaybe<FieldSelectorEnum>;
+  readonly _rev: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly _updatedAt: InputMaybe<FieldSelectorEnum>;
+  readonly altText: InputMaybe<FieldSelectorEnum>;
+  readonly assetId: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly extension: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly label: InputMaybe<FieldSelectorEnum>;
+  readonly mimeType: InputMaybe<FieldSelectorEnum>;
+  readonly originalFilename: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly path: InputMaybe<FieldSelectorEnum>;
+  readonly sha1hash: InputMaybe<FieldSelectorEnum>;
+  readonly size: InputMaybe<FieldSelectorEnum>;
+  readonly source: InputMaybe<SanityAssetSourceDataFieldSelector>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly url: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityFileAssetFilterInput = {
+  readonly _createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly _id: InputMaybe<StringQueryOperatorInput>;
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawSource: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rev: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly altText: InputMaybe<StringQueryOperatorInput>;
+  readonly assetId: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly extension: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly label: InputMaybe<StringQueryOperatorInput>;
+  readonly mimeType: InputMaybe<StringQueryOperatorInput>;
+  readonly originalFilename: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly path: InputMaybe<StringQueryOperatorInput>;
+  readonly sha1hash: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<FloatQueryOperatorInput>;
+  readonly source: InputMaybe<SanityAssetSourceDataFilterInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanityFileAssetGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityFileAssetEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SanityFileAssetGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityFileAsset>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityFileAssetGroupConnection_distinctArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+
+type SanityFileAssetGroupConnection_groupArgs = {
+  field: SanityFileAssetFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityFileAssetGroupConnection_maxArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+
+type SanityFileAssetGroupConnection_minArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+
+type SanityFileAssetGroupConnection_sumArgs = {
+  field: SanityFileAssetFieldSelector;
+};
+
+type SanityFileAssetSortInput = {
+  readonly _createdAt: InputMaybe<SortOrderEnum>;
+  readonly _id: InputMaybe<SortOrderEnum>;
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawSource: InputMaybe<SortOrderEnum>;
+  readonly _rev: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly _updatedAt: InputMaybe<SortOrderEnum>;
+  readonly altText: InputMaybe<SortOrderEnum>;
+  readonly assetId: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly extension: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly label: InputMaybe<SortOrderEnum>;
+  readonly mimeType: InputMaybe<SortOrderEnum>;
+  readonly originalFilename: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly path: InputMaybe<SortOrderEnum>;
+  readonly sha1hash: InputMaybe<SortOrderEnum>;
+  readonly size: InputMaybe<SortOrderEnum>;
+  readonly source: InputMaybe<SanityAssetSourceDataSortInput>;
+  readonly title: InputMaybe<SortOrderEnum>;
+  readonly url: InputMaybe<SortOrderEnum>;
+};
+
+type SanityGatsbyImagePlaceholder =
+  | 'blurred'
+  | 'dominantColor'
+  | 'none';
+
+type SanityGeopoint = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly alt: Maybe<Scalars['Float']>;
+  readonly lat: Maybe<Scalars['Float']>;
+  readonly lng: Maybe<Scalars['Float']>;
+};
+
+type SanityGeopointFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly alt: InputMaybe<FieldSelectorEnum>;
+  readonly lat: InputMaybe<FieldSelectorEnum>;
+  readonly lng: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityGeopointFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly alt: InputMaybe<FloatQueryOperatorInput>;
+  readonly lat: InputMaybe<FloatQueryOperatorInput>;
+  readonly lng: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type SanityGeopointSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly alt: InputMaybe<SortOrderEnum>;
+  readonly lat: InputMaybe<SortOrderEnum>;
+  readonly lng: InputMaybe<SortOrderEnum>;
+};
+
+type SanityImage = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawAsset: Maybe<Scalars['JSON']>;
+  readonly _rawCrop: Maybe<Scalars['JSON']>;
+  readonly _rawHotspot: Maybe<Scalars['JSON']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly asset: Maybe<SanityImageAsset>;
+  readonly crop: Maybe<SanityImageCrop>;
+  readonly hotspot: Maybe<SanityImageHotspot>;
+};
+
+
+type SanityImage__rawAssetArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImage__rawCropArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImage__rawHotspotArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+type SanityImageAsset = Node & RemoteFile & SanityDocument & {
+  readonly _createdAt: Maybe<Scalars['Date']>;
+  readonly _id: Maybe<Scalars['String']>;
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawMetadata: Maybe<Scalars['JSON']>;
+  readonly _rawSource: Maybe<Scalars['JSON']>;
+  readonly _rev: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _updatedAt: Maybe<Scalars['Date']>;
+  readonly altText: Maybe<Scalars['String']>;
+  readonly assetId: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly description: Maybe<Scalars['String']>;
+  readonly extension: Maybe<Scalars['String']>;
+  readonly filename: Scalars['String'];
+  readonly filesize: Maybe<Scalars['Int']>;
+  /** Data used in the <GatsbyImage /> component. See https://gatsby.dev/img for more info. */
+  readonly gatsbyImage: Maybe<Scalars['GatsbyImageData']>;
+  readonly gatsbyImageData: Scalars['GatsbyImageData'];
+  readonly height: Maybe<Scalars['Int']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly label: Maybe<Scalars['String']>;
+  readonly metadata: Maybe<SanityImageMetadata>;
+  readonly mimeType: Scalars['String'];
+  readonly originalFilename: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly path: Maybe<Scalars['String']>;
+  readonly publicUrl: Scalars['String'];
+  readonly resize: Maybe<RemoteFileResize>;
+  readonly sha1hash: Maybe<Scalars['String']>;
+  readonly size: Maybe<Scalars['Float']>;
+  readonly source: Maybe<SanityAssetSourceData>;
+  readonly title: Maybe<Scalars['String']>;
+  readonly uploadId: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly width: Maybe<Scalars['Int']>;
+};
+
+
+type SanityImageAsset__createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type SanityImageAsset__rawMetadataArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImageAsset__rawSourceArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImageAsset__updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type SanityImageAsset_gatsbyImageArgs = {
+  aspectRatio: InputMaybe<Scalars['Float']>;
+  backgroundColor: InputMaybe<Scalars['String']>;
+  breakpoints?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']>>>;
+  cropFocus: InputMaybe<ReadonlyArray<InputMaybe<RemoteFileCropFocus>>>;
+  fit?: InputMaybe<RemoteFileFit>;
+  formats?: InputMaybe<ReadonlyArray<RemoteFileFormat>>;
+  height: InputMaybe<Scalars['Int']>;
+  layout?: InputMaybe<RemoteFileLayout>;
+  outputPixelDensities?: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Float']>>>;
+  placeholder?: InputMaybe<RemoteFilePlaceholder>;
+  quality?: InputMaybe<Scalars['Int']>;
+  sizes: InputMaybe<Scalars['String']>;
+  width: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityImageAsset_gatsbyImageDataArgs = {
+  aspectRatio: InputMaybe<Scalars['Float']>;
+  backgroundColor: InputMaybe<Scalars['String']>;
+  breakpoints: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Int']>>>;
+  fit?: InputMaybe<SanityImageFit>;
+  formats?: InputMaybe<ReadonlyArray<InputMaybe<GatsbyImageFormat>>>;
+  height: InputMaybe<Scalars['Int']>;
+  layout: InputMaybe<GatsbyImageLayout>;
+  outputPixelDensities: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Float']>>>;
+  placeholder?: InputMaybe<SanityGatsbyImagePlaceholder>;
+  sizes: InputMaybe<Scalars['String']>;
+  width: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityImageAsset_resizeArgs = {
+  aspectRatio: InputMaybe<Scalars['Float']>;
+  cropFocus: InputMaybe<ReadonlyArray<InputMaybe<RemoteFileCropFocus>>>;
+  fit?: InputMaybe<RemoteFileFit>;
+  format?: InputMaybe<RemoteFileFormat>;
+  height: InputMaybe<Scalars['Int']>;
+  quality?: InputMaybe<Scalars['Int']>;
+  width: InputMaybe<Scalars['Int']>;
+};
+
+type SanityImageAssetConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityImageAssetEdge>;
+  readonly group: ReadonlyArray<SanityImageAssetGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityImageAsset>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityImageAssetConnection_distinctArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+
+type SanityImageAssetConnection_groupArgs = {
+  field: SanityImageAssetFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityImageAssetConnection_maxArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+
+type SanityImageAssetConnection_minArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+
+type SanityImageAssetConnection_sumArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+type SanityImageAssetEdge = {
+  readonly next: Maybe<SanityImageAsset>;
+  readonly node: SanityImageAsset;
+  readonly previous: Maybe<SanityImageAsset>;
+};
+
+type SanityImageAssetFieldSelector = {
+  readonly _createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly _id: InputMaybe<FieldSelectorEnum>;
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawMetadata: InputMaybe<FieldSelectorEnum>;
+  readonly _rawSource: InputMaybe<FieldSelectorEnum>;
+  readonly _rev: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly _updatedAt: InputMaybe<FieldSelectorEnum>;
+  readonly altText: InputMaybe<FieldSelectorEnum>;
+  readonly assetId: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly extension: InputMaybe<FieldSelectorEnum>;
+  readonly filename: InputMaybe<FieldSelectorEnum>;
+  readonly filesize: InputMaybe<FieldSelectorEnum>;
+  readonly gatsbyImage: InputMaybe<FieldSelectorEnum>;
+  readonly gatsbyImageData: InputMaybe<FieldSelectorEnum>;
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly label: InputMaybe<FieldSelectorEnum>;
+  readonly metadata: InputMaybe<SanityImageMetadataFieldSelector>;
+  readonly mimeType: InputMaybe<FieldSelectorEnum>;
+  readonly originalFilename: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly path: InputMaybe<FieldSelectorEnum>;
+  readonly publicUrl: InputMaybe<FieldSelectorEnum>;
+  readonly resize: InputMaybe<RemoteFileResizeFieldSelector>;
+  readonly sha1hash: InputMaybe<FieldSelectorEnum>;
+  readonly size: InputMaybe<FieldSelectorEnum>;
+  readonly source: InputMaybe<SanityAssetSourceDataFieldSelector>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly uploadId: InputMaybe<FieldSelectorEnum>;
+  readonly url: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityImageAssetFilterInput = {
+  readonly _createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly _id: InputMaybe<StringQueryOperatorInput>;
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawMetadata: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawSource: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rev: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly altText: InputMaybe<StringQueryOperatorInput>;
+  readonly assetId: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly extension: InputMaybe<StringQueryOperatorInput>;
+  readonly filename: InputMaybe<StringQueryOperatorInput>;
+  readonly filesize: InputMaybe<IntQueryOperatorInput>;
+  readonly gatsbyImage: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  readonly gatsbyImageData: InputMaybe<GatsbyImageDataQueryOperatorInput>;
+  readonly height: InputMaybe<IntQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly label: InputMaybe<StringQueryOperatorInput>;
+  readonly metadata: InputMaybe<SanityImageMetadataFilterInput>;
+  readonly mimeType: InputMaybe<StringQueryOperatorInput>;
+  readonly originalFilename: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly path: InputMaybe<StringQueryOperatorInput>;
+  readonly publicUrl: InputMaybe<StringQueryOperatorInput>;
+  readonly resize: InputMaybe<RemoteFileResizeFilterInput>;
+  readonly sha1hash: InputMaybe<StringQueryOperatorInput>;
+  readonly size: InputMaybe<FloatQueryOperatorInput>;
+  readonly source: InputMaybe<SanityAssetSourceDataFilterInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly uploadId: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+  readonly width: InputMaybe<IntQueryOperatorInput>;
+};
+
+type SanityImageAssetGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityImageAssetEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SanityImageAssetGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityImageAsset>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityImageAssetGroupConnection_distinctArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+
+type SanityImageAssetGroupConnection_groupArgs = {
+  field: SanityImageAssetFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityImageAssetGroupConnection_maxArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+
+type SanityImageAssetGroupConnection_minArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+
+type SanityImageAssetGroupConnection_sumArgs = {
+  field: SanityImageAssetFieldSelector;
+};
+
+type SanityImageAssetSortInput = {
+  readonly _createdAt: InputMaybe<SortOrderEnum>;
+  readonly _id: InputMaybe<SortOrderEnum>;
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawMetadata: InputMaybe<SortOrderEnum>;
+  readonly _rawSource: InputMaybe<SortOrderEnum>;
+  readonly _rev: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly _updatedAt: InputMaybe<SortOrderEnum>;
+  readonly altText: InputMaybe<SortOrderEnum>;
+  readonly assetId: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly description: InputMaybe<SortOrderEnum>;
+  readonly extension: InputMaybe<SortOrderEnum>;
+  readonly filename: InputMaybe<SortOrderEnum>;
+  readonly filesize: InputMaybe<SortOrderEnum>;
+  readonly gatsbyImage: InputMaybe<SortOrderEnum>;
+  readonly gatsbyImageData: InputMaybe<SortOrderEnum>;
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly label: InputMaybe<SortOrderEnum>;
+  readonly metadata: InputMaybe<SanityImageMetadataSortInput>;
+  readonly mimeType: InputMaybe<SortOrderEnum>;
+  readonly originalFilename: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly path: InputMaybe<SortOrderEnum>;
+  readonly publicUrl: InputMaybe<SortOrderEnum>;
+  readonly resize: InputMaybe<RemoteFileResizeSortInput>;
+  readonly sha1hash: InputMaybe<SortOrderEnum>;
+  readonly size: InputMaybe<SortOrderEnum>;
+  readonly source: InputMaybe<SanityAssetSourceDataSortInput>;
+  readonly title: InputMaybe<SortOrderEnum>;
+  readonly uploadId: InputMaybe<SortOrderEnum>;
+  readonly url: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
+};
+
+type SanityImageCrop = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly bottom: Maybe<Scalars['Float']>;
+  readonly left: Maybe<Scalars['Float']>;
+  readonly right: Maybe<Scalars['Float']>;
+  readonly top: Maybe<Scalars['Float']>;
+};
+
+type SanityImageCropFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly bottom: InputMaybe<FieldSelectorEnum>;
+  readonly left: InputMaybe<FieldSelectorEnum>;
+  readonly right: InputMaybe<FieldSelectorEnum>;
+  readonly top: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityImageCropFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly bottom: InputMaybe<FloatQueryOperatorInput>;
+  readonly left: InputMaybe<FloatQueryOperatorInput>;
+  readonly right: InputMaybe<FloatQueryOperatorInput>;
+  readonly top: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type SanityImageCropSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly bottom: InputMaybe<SortOrderEnum>;
+  readonly left: InputMaybe<SortOrderEnum>;
+  readonly right: InputMaybe<SortOrderEnum>;
+  readonly top: InputMaybe<SortOrderEnum>;
+};
+
+type SanityImageDimensions = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly aspectRatio: Maybe<Scalars['Float']>;
+  readonly height: Maybe<Scalars['Float']>;
+  readonly width: Maybe<Scalars['Float']>;
+};
+
+type SanityImageDimensionsFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly aspectRatio: InputMaybe<FieldSelectorEnum>;
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityImageDimensionsFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly aspectRatio: InputMaybe<FloatQueryOperatorInput>;
+  readonly height: InputMaybe<FloatQueryOperatorInput>;
+  readonly width: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type SanityImageDimensionsSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly aspectRatio: InputMaybe<SortOrderEnum>;
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
+};
+
+type SanityImageFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawAsset: InputMaybe<FieldSelectorEnum>;
+  readonly _rawCrop: InputMaybe<FieldSelectorEnum>;
+  readonly _rawHotspot: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly asset: InputMaybe<SanityImageAssetFieldSelector>;
+  readonly crop: InputMaybe<SanityImageCropFieldSelector>;
+  readonly hotspot: InputMaybe<SanityImageHotspotFieldSelector>;
+};
+
+type SanityImageFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawAsset: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawCrop: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawHotspot: InputMaybe<JSONQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly asset: InputMaybe<SanityImageAssetFilterInput>;
+  readonly crop: InputMaybe<SanityImageCropFilterInput>;
+  readonly hotspot: InputMaybe<SanityImageHotspotFilterInput>;
+};
+
+type SanityImageFit =
+  | 'clip'
+  | 'crop'
+  | 'fill'
+  | 'fillmax'
+  | 'max'
+  | 'min'
+  | 'scale';
+
+type SanityImageHotspot = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly height: Maybe<Scalars['Float']>;
+  readonly width: Maybe<Scalars['Float']>;
+  readonly x: Maybe<Scalars['Float']>;
+  readonly y: Maybe<Scalars['Float']>;
+};
+
+type SanityImageHotspotFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly height: InputMaybe<FieldSelectorEnum>;
+  readonly width: InputMaybe<FieldSelectorEnum>;
+  readonly x: InputMaybe<FieldSelectorEnum>;
+  readonly y: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityImageHotspotFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly height: InputMaybe<FloatQueryOperatorInput>;
+  readonly width: InputMaybe<FloatQueryOperatorInput>;
+  readonly x: InputMaybe<FloatQueryOperatorInput>;
+  readonly y: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type SanityImageHotspotSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly height: InputMaybe<SortOrderEnum>;
+  readonly width: InputMaybe<SortOrderEnum>;
+  readonly x: InputMaybe<SortOrderEnum>;
+  readonly y: InputMaybe<SortOrderEnum>;
+};
+
+type SanityImageMetadata = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawDimensions: Maybe<Scalars['JSON']>;
+  readonly _rawLocation: Maybe<Scalars['JSON']>;
+  readonly _rawPalette: Maybe<Scalars['JSON']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly blurHash: Maybe<Scalars['String']>;
+  readonly dimensions: Maybe<SanityImageDimensions>;
+  readonly hasAlpha: Maybe<Scalars['Boolean']>;
+  readonly isOpaque: Maybe<Scalars['Boolean']>;
+  readonly location: Maybe<SanityGeopoint>;
+  readonly lqip: Maybe<Scalars['String']>;
+  readonly palette: Maybe<SanityImagePalette>;
+};
+
+
+type SanityImageMetadata__rawDimensionsArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImageMetadata__rawLocationArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImageMetadata__rawPaletteArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+type SanityImageMetadataFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawDimensions: InputMaybe<FieldSelectorEnum>;
+  readonly _rawLocation: InputMaybe<FieldSelectorEnum>;
+  readonly _rawPalette: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly blurHash: InputMaybe<FieldSelectorEnum>;
+  readonly dimensions: InputMaybe<SanityImageDimensionsFieldSelector>;
+  readonly hasAlpha: InputMaybe<FieldSelectorEnum>;
+  readonly isOpaque: InputMaybe<FieldSelectorEnum>;
+  readonly location: InputMaybe<SanityGeopointFieldSelector>;
+  readonly lqip: InputMaybe<FieldSelectorEnum>;
+  readonly palette: InputMaybe<SanityImagePaletteFieldSelector>;
+};
+
+type SanityImageMetadataFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawDimensions: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawLocation: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawPalette: InputMaybe<JSONQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly blurHash: InputMaybe<StringQueryOperatorInput>;
+  readonly dimensions: InputMaybe<SanityImageDimensionsFilterInput>;
+  readonly hasAlpha: InputMaybe<BooleanQueryOperatorInput>;
+  readonly isOpaque: InputMaybe<BooleanQueryOperatorInput>;
+  readonly location: InputMaybe<SanityGeopointFilterInput>;
+  readonly lqip: InputMaybe<StringQueryOperatorInput>;
+  readonly palette: InputMaybe<SanityImagePaletteFilterInput>;
+};
+
+type SanityImageMetadataSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawDimensions: InputMaybe<SortOrderEnum>;
+  readonly _rawLocation: InputMaybe<SortOrderEnum>;
+  readonly _rawPalette: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly blurHash: InputMaybe<SortOrderEnum>;
+  readonly dimensions: InputMaybe<SanityImageDimensionsSortInput>;
+  readonly hasAlpha: InputMaybe<SortOrderEnum>;
+  readonly isOpaque: InputMaybe<SortOrderEnum>;
+  readonly location: InputMaybe<SanityGeopointSortInput>;
+  readonly lqip: InputMaybe<SortOrderEnum>;
+  readonly palette: InputMaybe<SanityImagePaletteSortInput>;
+};
+
+type SanityImagePalette = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawDarkMuted: Maybe<Scalars['JSON']>;
+  readonly _rawDarkVibrant: Maybe<Scalars['JSON']>;
+  readonly _rawDominant: Maybe<Scalars['JSON']>;
+  readonly _rawLightMuted: Maybe<Scalars['JSON']>;
+  readonly _rawLightVibrant: Maybe<Scalars['JSON']>;
+  readonly _rawMuted: Maybe<Scalars['JSON']>;
+  readonly _rawVibrant: Maybe<Scalars['JSON']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly darkMuted: Maybe<SanityImagePaletteSwatch>;
+  readonly darkVibrant: Maybe<SanityImagePaletteSwatch>;
+  readonly dominant: Maybe<SanityImagePaletteSwatch>;
+  readonly lightMuted: Maybe<SanityImagePaletteSwatch>;
+  readonly lightVibrant: Maybe<SanityImagePaletteSwatch>;
+  readonly muted: Maybe<SanityImagePaletteSwatch>;
+  readonly vibrant: Maybe<SanityImagePaletteSwatch>;
+};
+
+
+type SanityImagePalette__rawDarkMutedArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImagePalette__rawDarkVibrantArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImagePalette__rawDominantArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImagePalette__rawLightMutedArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImagePalette__rawLightVibrantArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImagePalette__rawMutedArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityImagePalette__rawVibrantArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+type SanityImagePaletteFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawDarkMuted: InputMaybe<FieldSelectorEnum>;
+  readonly _rawDarkVibrant: InputMaybe<FieldSelectorEnum>;
+  readonly _rawDominant: InputMaybe<FieldSelectorEnum>;
+  readonly _rawLightMuted: InputMaybe<FieldSelectorEnum>;
+  readonly _rawLightVibrant: InputMaybe<FieldSelectorEnum>;
+  readonly _rawMuted: InputMaybe<FieldSelectorEnum>;
+  readonly _rawVibrant: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly darkMuted: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+  readonly darkVibrant: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+  readonly dominant: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+  readonly lightMuted: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+  readonly lightVibrant: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+  readonly muted: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+  readonly vibrant: InputMaybe<SanityImagePaletteSwatchFieldSelector>;
+};
+
+type SanityImagePaletteFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawDarkMuted: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawDarkVibrant: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawDominant: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawLightMuted: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawLightVibrant: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawMuted: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawVibrant: InputMaybe<JSONQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly darkMuted: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  readonly darkVibrant: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  readonly dominant: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  readonly lightMuted: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  readonly lightVibrant: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  readonly muted: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+  readonly vibrant: InputMaybe<SanityImagePaletteSwatchFilterInput>;
+};
+
+type SanityImagePaletteSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawDarkMuted: InputMaybe<SortOrderEnum>;
+  readonly _rawDarkVibrant: InputMaybe<SortOrderEnum>;
+  readonly _rawDominant: InputMaybe<SortOrderEnum>;
+  readonly _rawLightMuted: InputMaybe<SortOrderEnum>;
+  readonly _rawLightVibrant: InputMaybe<SortOrderEnum>;
+  readonly _rawMuted: InputMaybe<SortOrderEnum>;
+  readonly _rawVibrant: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly darkMuted: InputMaybe<SanityImagePaletteSwatchSortInput>;
+  readonly darkVibrant: InputMaybe<SanityImagePaletteSwatchSortInput>;
+  readonly dominant: InputMaybe<SanityImagePaletteSwatchSortInput>;
+  readonly lightMuted: InputMaybe<SanityImagePaletteSwatchSortInput>;
+  readonly lightVibrant: InputMaybe<SanityImagePaletteSwatchSortInput>;
+  readonly muted: InputMaybe<SanityImagePaletteSwatchSortInput>;
+  readonly vibrant: InputMaybe<SanityImagePaletteSwatchSortInput>;
+};
+
+type SanityImagePaletteSwatch = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly background: Maybe<Scalars['String']>;
+  readonly foreground: Maybe<Scalars['String']>;
+  readonly population: Maybe<Scalars['Float']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type SanityImagePaletteSwatchFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly background: InputMaybe<FieldSelectorEnum>;
+  readonly foreground: InputMaybe<FieldSelectorEnum>;
+  readonly population: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityImagePaletteSwatchFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly background: InputMaybe<StringQueryOperatorInput>;
+  readonly foreground: InputMaybe<StringQueryOperatorInput>;
+  readonly population: InputMaybe<FloatQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanityImagePaletteSwatchSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly background: InputMaybe<SortOrderEnum>;
+  readonly foreground: InputMaybe<SortOrderEnum>;
+  readonly population: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type SanityImageSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawAsset: InputMaybe<SortOrderEnum>;
+  readonly _rawCrop: InputMaybe<SortOrderEnum>;
+  readonly _rawHotspot: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly asset: InputMaybe<SanityImageAssetSortInput>;
+  readonly crop: InputMaybe<SanityImageCropSortInput>;
+  readonly hotspot: InputMaybe<SanityImageHotspotSortInput>;
+};
+
+type SanityPost = Node & SanityDocument & {
+  readonly _createdAt: Maybe<Scalars['Date']>;
+  readonly _id: Maybe<Scalars['String']>;
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _rawBody: Maybe<Scalars['JSON']>;
+  readonly _rawCategories: Maybe<Scalars['JSON']>;
+  readonly _rawExcerpt: Maybe<Scalars['JSON']>;
+  readonly _rawMainImage: Maybe<Scalars['JSON']>;
+  readonly _rawSlug: Maybe<Scalars['JSON']>;
+  readonly _rev: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly _updatedAt: Maybe<Scalars['Date']>;
+  readonly body: Maybe<ReadonlyArray<Maybe<SanityBlock>>>;
+  readonly categories: Maybe<ReadonlyArray<Maybe<SanityCategory>>>;
+  readonly children: ReadonlyArray<Node>;
+  readonly excerpt: Maybe<ReadonlyArray<Maybe<SanityBlock>>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly mainImage: Maybe<SanityImage>;
+  readonly parent: Maybe<Node>;
+  readonly publishedAt: Maybe<Scalars['Date']>;
+  readonly slug: Maybe<SanitySlug>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+
+type SanityPost__createdAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type SanityPost__rawBodyArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityPost__rawCategoriesArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityPost__rawExcerptArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityPost__rawMainImageArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityPost__rawSlugArgs = {
+  resolveReferences: InputMaybe<SanityResolveReferencesConfiguration>;
+};
+
+
+type SanityPost__updatedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+
+type SanityPost_publishedAtArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type SanityPostConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityPostEdge>;
+  readonly group: ReadonlyArray<SanityPostGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityPost>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityPostConnection_distinctArgs = {
+  field: SanityPostFieldSelector;
+};
+
+
+type SanityPostConnection_groupArgs = {
+  field: SanityPostFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityPostConnection_maxArgs = {
+  field: SanityPostFieldSelector;
+};
+
+
+type SanityPostConnection_minArgs = {
+  field: SanityPostFieldSelector;
+};
+
+
+type SanityPostConnection_sumArgs = {
+  field: SanityPostFieldSelector;
+};
+
+type SanityPostEdge = {
+  readonly next: Maybe<SanityPost>;
+  readonly node: SanityPost;
+  readonly previous: Maybe<SanityPost>;
+};
+
+type SanityPostFieldSelector = {
+  readonly _createdAt: InputMaybe<FieldSelectorEnum>;
+  readonly _id: InputMaybe<FieldSelectorEnum>;
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _rawBody: InputMaybe<FieldSelectorEnum>;
+  readonly _rawCategories: InputMaybe<FieldSelectorEnum>;
+  readonly _rawExcerpt: InputMaybe<FieldSelectorEnum>;
+  readonly _rawMainImage: InputMaybe<FieldSelectorEnum>;
+  readonly _rawSlug: InputMaybe<FieldSelectorEnum>;
+  readonly _rev: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly _updatedAt: InputMaybe<FieldSelectorEnum>;
+  readonly body: InputMaybe<SanityBlockFieldSelector>;
+  readonly categories: InputMaybe<SanityCategoryFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly excerpt: InputMaybe<SanityBlockFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly mainImage: InputMaybe<SanityImageFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly publishedAt: InputMaybe<FieldSelectorEnum>;
+  readonly slug: InputMaybe<SanitySlugFieldSelector>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanityPostFilterInput = {
+  readonly _createdAt: InputMaybe<DateQueryOperatorInput>;
+  readonly _id: InputMaybe<StringQueryOperatorInput>;
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _rawBody: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawCategories: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawExcerpt: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawMainImage: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rawSlug: InputMaybe<JSONQueryOperatorInput>;
+  readonly _rev: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly _updatedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly body: InputMaybe<SanityBlockFilterListInput>;
+  readonly categories: InputMaybe<SanityCategoryFilterListInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly excerpt: InputMaybe<SanityBlockFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly mainImage: InputMaybe<SanityImageFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly publishedAt: InputMaybe<DateQueryOperatorInput>;
+  readonly slug: InputMaybe<SanitySlugFilterInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanityPostGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<SanityPostEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<SanityPostGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<SanityPost>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type SanityPostGroupConnection_distinctArgs = {
+  field: SanityPostFieldSelector;
+};
+
+
+type SanityPostGroupConnection_groupArgs = {
+  field: SanityPostFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type SanityPostGroupConnection_maxArgs = {
+  field: SanityPostFieldSelector;
+};
+
+
+type SanityPostGroupConnection_minArgs = {
+  field: SanityPostFieldSelector;
+};
+
+
+type SanityPostGroupConnection_sumArgs = {
+  field: SanityPostFieldSelector;
+};
+
+type SanityPostSortInput = {
+  readonly _createdAt: InputMaybe<SortOrderEnum>;
+  readonly _id: InputMaybe<SortOrderEnum>;
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _rawBody: InputMaybe<SortOrderEnum>;
+  readonly _rawCategories: InputMaybe<SortOrderEnum>;
+  readonly _rawExcerpt: InputMaybe<SortOrderEnum>;
+  readonly _rawMainImage: InputMaybe<SortOrderEnum>;
+  readonly _rawSlug: InputMaybe<SortOrderEnum>;
+  readonly _rev: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly _updatedAt: InputMaybe<SortOrderEnum>;
+  readonly body: InputMaybe<SanityBlockSortInput>;
+  readonly categories: InputMaybe<SanityCategorySortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly excerpt: InputMaybe<SanityBlockSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly mainImage: InputMaybe<SanityImageSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly publishedAt: InputMaybe<SortOrderEnum>;
+  readonly slug: InputMaybe<SanitySlugSortInput>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type SanityResolveReferencesConfiguration = {
+  /** Max depth to resolve references to */
+  readonly maxDepth: Scalars['Int'];
+};
+
+type SanitySlug = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly current: Maybe<Scalars['String']>;
+  readonly source: Maybe<Scalars['String']>;
+};
+
+type SanitySlugFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly current: InputMaybe<FieldSelectorEnum>;
+  readonly source: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanitySlugFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly current: InputMaybe<StringQueryOperatorInput>;
+  readonly source: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanitySlugSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly current: InputMaybe<SortOrderEnum>;
+  readonly source: InputMaybe<SortOrderEnum>;
+};
+
+type SanitySpan = {
+  readonly _key: Maybe<Scalars['String']>;
+  readonly _type: Maybe<Scalars['String']>;
+  readonly marks: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly text: Maybe<Scalars['String']>;
+};
+
+type SanitySpanFieldSelector = {
+  readonly _key: InputMaybe<FieldSelectorEnum>;
+  readonly _type: InputMaybe<FieldSelectorEnum>;
+  readonly marks: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<FieldSelectorEnum>;
+};
+
+type SanitySpanFilterInput = {
+  readonly _key: InputMaybe<StringQueryOperatorInput>;
+  readonly _type: InputMaybe<StringQueryOperatorInput>;
+  readonly marks: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SanitySpanFilterListInput = {
+  readonly elemMatch: InputMaybe<SanitySpanFilterInput>;
+};
+
+type SanitySpanSortInput = {
+  readonly _key: InputMaybe<SortOrderEnum>;
+  readonly _type: InputMaybe<SortOrderEnum>;
+  readonly marks: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<SortOrderEnum>;
 };
 
 type Site = Node & {
@@ -2878,6 +4658,11 @@ type GatsbyImageSharpFluid_withWebp_noBase64Fragment = { readonly aspectRatio: n
 type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = { readonly tracedSVG: string | null, readonly aspectRatio: number, readonly src: string, readonly srcSet: string, readonly srcWebp: string | null, readonly srcSetWebp: string | null, readonly sizes: string };
 
 type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: number, readonly maxWidth: number };
+
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_1_Query = { readonly allSanityPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly slug: { readonly current: string | null } | null } }> } };
 
 
 }

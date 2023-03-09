@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from 'gatsby';
+require('dotenv').config();
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -44,28 +45,16 @@ const config: GatsbyConfig = {
         path: `${__dirname}/content/`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `posts`,
-    //     path: `${__dirname}/content/posts`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `projects`,
-    //     path: `${__dirname}/content/projects`,
-    //   },
-    // },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'pages',
-    //     path: './src/pages/',
-    //   },
-    //   __key: 'pages',
-    // },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: '5jtu1uen',
+        dataset: 'production',
+        watchMode: true,
+        overlayDrafts: true,
+        token: process.env.SANITY_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {

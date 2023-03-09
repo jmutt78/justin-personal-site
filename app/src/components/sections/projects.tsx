@@ -7,7 +7,7 @@ import sr, { srConfig } from '../../utils';
 import Icon from '../icon';
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
-const StyledProjectsSection = styled.section`
+export const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

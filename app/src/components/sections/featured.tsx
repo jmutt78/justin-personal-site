@@ -7,7 +7,7 @@ import sr, { srConfig } from '../../utils';
 import Icon from '../icon';
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
-const StyledProjectsGrid = styled.ul`
+export const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
 
   a {
@@ -16,7 +16,7 @@ const StyledProjectsGrid = styled.ul`
   }
 `;
 
-const StyledProject = styled.li`
+export const StyledProject = styled.li`
   position: relative;
   display: grid;
   grid-gap: 10px;

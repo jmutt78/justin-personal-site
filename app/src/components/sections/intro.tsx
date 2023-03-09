@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 import { navDelay, loaderDelay } from '../../utils';
 
-const StyledHeroSection = styled.section`
+export const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;

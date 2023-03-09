@@ -8,8 +8,9 @@ import styled from 'styled-components';
 import Featured from '../components/sections/featured';
 import Projects from '../components/sections/projects';
 import Contact from '../components/sections/contact';
+import Blog from '../components/sections/blog';
 
-const StyledMainContainer = styled.main`
+export const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
@@ -19,6 +20,7 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
       <StyledMainContainer className='fillHeight'>
         <Intro />
         <About />
+        <Blog />
         <Jobs />
         <Featured />
         <Projects />

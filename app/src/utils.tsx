@@ -15,10 +15,10 @@ export const navLinks = [
     name: 'Work',
     url: '/#projects',
   },
-  // {
-  //   name: 'Blog',
-  //   url: '/blog',
-  // },
+  {
+    name: 'Blog',
+    url: '/#blog',
+  },
   {
     name: 'Contact',
     url: '/#contact',

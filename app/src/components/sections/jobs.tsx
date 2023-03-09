@@ -7,8 +7,6 @@ import sr, { srConfig, KEY_CODES } from '../../utils';
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
-
   .inner {
     display: flex;
 
