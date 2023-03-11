@@ -74,7 +74,8 @@ const Intro = () => {
         <a href='https://www.thepublichealthco.com/' target='_blank' rel='noreferrer'>
           The Public Health Company
         </a>
-        .
+        . I also love to teach and mentor aspiring software engineering leaders. In my free time, I
+        build micro saas products and contribute to open source.
       </p>
     </>
   );
