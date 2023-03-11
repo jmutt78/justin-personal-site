@@ -1,9 +1,9 @@
 ---
 date: '2022-03-8'
 title: 'Director of Frontend Engineering'
-company: 'The Public Health Company'
+company: 'PHC'
 location: 'Palo Alto, CA'
-range: 'March - Present'
+range: 'March 2022 - Present'
 url: 'https://www.thepublichealthco.com/'
 ---
 
