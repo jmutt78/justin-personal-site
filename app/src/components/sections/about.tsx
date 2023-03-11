@@ -166,8 +166,11 @@ const About = () => {
               first global biosecurity platform at{' '}
               <a href='https://www.thepublichealthco.com/'>The Public Health Company</a>.
             </p>
-
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>
+              I love to teach and mentor aspiring software engineering leaders. In my free time, I
+              build micro saas products and contribute to open source.
+            </p>
+            ;<p>Here are a few technologies I’ve been working with recently:</p>
           </div>
 
           <ul className='skills-list'>

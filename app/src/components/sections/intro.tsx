@@ -69,14 +69,6 @@ const Intro = () => {
         experiences. As a hands-on leader, I specialize in leading and organizing teams while
         remaining active in the engineering process.
       </p>
-      <p>
-        Currently, I am focused on building the first global biosecurity platform at{' '}
-        <a href='https://www.thepublichealthco.com/' target='_blank' rel='noreferrer'>
-          The Public Health Company
-        </a>
-        . I also love to teach and mentor aspiring software engineering leaders. In my free time, I
-        build micro saas products and contribute to open source.
-      </p>
     </>
   );
 
