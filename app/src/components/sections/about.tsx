@@ -154,23 +154,30 @@ const About = () => {
               business success.
             </p>
             <p>
-              My path to becoming a software engineering leader was not a straight one. While still
-              in college, I co-founded a utility fields services company with my father and served
-              as VP of Operations, helping to lead and grow the company to 300 employees before a
-              successful exit. After some soul-searching, I found my passion in software engineering
-              while developing the concept for a{' '}
+              My path as leader in tech was not a traditional one. While still in college, I
+              co-founded a utility fields services company with my father and served as Vice
+              President of Operations, helping to lead and grow the company to 300 employees before
+              a successful exit. After some soul-searching, I found my passion in tech while
+              developing the concept for a{' '}
               <a href='https://docusites.com/'>construction application</a>.
             </p>
             <p>
-              Today, I am focused on utilizing my experience and skills to help my team build the
-              first global biosecurity platform at{' '}
-              <a href='https://www.thepublichealthco.com/'>The Public Health Company</a>.
+              Today, I am focused on utilizing my skills to help our team build the first global
+              biosecurity platform at{' '}
+              <a href='https://www.thepublichealthco.com/'>The Public Health Company</a>. I serve
+              the company as Vice President of Operations where I bring together my diverse
+              experiences to lead our operations and contribute to the development of our global
+              biosecurity platform.
             </p>
             <p>
-              I love to teach and mentor aspiring software engineering leaders. In my free time, I
-              build micro saas products and contribute to open source.
+              Beyond my professional duties, I'm passionate about mentoring emerging leaders and
+              strive to establish myself as a thought leader in operations and leadership. I'm
+              focused on fostering environments that are rooted in positivity, continuous growth,
+              and collective success. My ultimate aim is to make a difference, inspiring both
+              individuals and teams within my organization and the broader community, advancing
+              together towards our goals.
             </p>
-            ;<p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
 
           <ul className='skills-list'>

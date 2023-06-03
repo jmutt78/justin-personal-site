@@ -23,7 +23,6 @@ const IndexPage: React.FC<PageProps> = ({ location }) => {
         <Blog />
         <Jobs />
         <Featured />
-        <Projects />
         <Contact />
       </StyledMainContainer>
     </Layout>

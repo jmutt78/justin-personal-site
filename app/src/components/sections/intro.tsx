@@ -61,13 +61,19 @@ const Intro = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className='big-heading'>Justin McIntosh.</h2>;
-  const three = <h3 className='big-heading'>I build beautiful things for the web.</h3>;
+  const three = (
+    <h3 className='big-heading'>
+      I help startups streamline processes, enhance leadership, and boost efficiency
+    </h3>
+  );
   const four = (
     <>
       <p>
-        I'm a software engineering leader with a passion for building exceptional digital
-        experiences. As a hands-on leader, I specialize in leading and organizing teams while
-        remaining active in the engineering process.
+        I specialize in improving operational efficiency and optimizing performance. With my
+        background in software engineering, I stay up-to-date on the latest innovations and combine
+        technology and management to achieve outstanding results. My leadership approach revolves
+        around positivity, mutual respect, and the belief in the potential of individuals and teams
+        to excel.
       </p>
     </>
   );

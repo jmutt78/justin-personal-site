@@ -58,9 +58,12 @@ const Contact = () => {
       <h2 className='numbered-heading overline'>What’s Next?</h2>
       <h2 className='title'>Get In Touch</h2>
       <p>
-        Although I am not actively searching for new opportunities at the moment, I am open to
-        hearing from you. I am obsessed with building cool products and leading high performing
-        teams Feel free to reach out with any questions or just to say hello.
+        While I am deeply committed to my current role at The Public Health Company, I am always
+        excited about sharing experiences and insights. I have a keen interest in shaping innovative
+        solutions and nurturing dynamic, effective teams. Don't hesitate to reach out if you have
+        any questions, if you'd like to discuss leadership and operational strategies, or even just
+        to exchange a friendly 'hello'. Remember, every conversation holds the potential for growth
+        and improvement.
       </p>
       <a className='email-link' href={`mailto:${email}`}>
         Say Hello
